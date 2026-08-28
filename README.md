@@ -1,7 +1,3 @@
-
----
-
-|  |  |
 |--|--|
 | [**MinimalistNotes**](https://minimalistnotes.com) | |
 | [**Musing**](https://musing.wiki) | |
