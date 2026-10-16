@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-labelledby="t d">
+  <title id="t">PGHQ</title>
+  <desc id="d">A small building on the internet. Ground floor, four rooms, one door, no ads.</desc>
+  <style>
+    .display { font-family: 'Archivo Black', 'Arial Black', 'Helvetica Neue', Arial, sans-serif; font-weight: 900; fill: #1a1511; }
+    .body { font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; fill: #1a1511; }
+    .mono { font-family: 'Space Mono', ui-monospace, Menlo, Consolas, monospace; fill: #423c37; letter-spacing: 0.12em; }
+    .label { font-family: 'Space Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 15px; letter-spacing: 0.14em; fill: #1a1511; }
+    .wall { fill: none; stroke: #1a1511; stroke-width: 6; stroke-linecap: square; stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: draw 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .wall.inner { stroke-width: 4; animation-delay: 0.5s; }
+    .wash { fill: #ec7c0e; opacity: 0; animation: fade 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards; }
+    .swing { fill: none; stroke: #1a1511; stroke-width: 2; stroke-dasharray: 5 6; opacity: 0; animation: fade 0.42s ease-out 1.6s forwards; }
+    .cursor { fill: #ec7c0e; animation: blink 1.1s steps(1) infinite; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .wall, .wash, .swing, .cursor { animation: none; stroke-dashoffset: 0; opacity: 1; }
+    }
+  </style>
+
+  <!-- card with hard offset shadow -->
+  <rect x="18" y="18" width="1250" height="390" rx="2" fill="#1a1511"/>
+  <rect x="6" y="6" width="1250" height="390" rx="2" fill="#f7f1e5" stroke="#1a1511" stroke-width="3"/>
+
+  <!-- left: name and spec -->
+  <text x="64" y="84" class="mono" font-size="16">PGHQ.DEV · TOKYO, JAPAN</text>
+  <text x="58" y="208" class="display" font-size="136">PGHQ</text>
+  <rect x="64" y="236" width="96" height="10" fill="#ec7c0e"/>
+  <text x="64" y="294" class="body" font-size="34" font-weight="700">A small building on the internet.</text>
+  <text x="64" y="346" class="mono" font-size="16">GROUND FLOOR · FOUR ROOMS · ONE DOOR · NO ADS <tspan class="cursor">█</tspan></text>
+
+  <!-- right: floor plan -->
+  <g transform="translate(760 56)">
+    <rect x="3" y="3" width="254" height="164" class="wash"/>
+    <!-- outer walls, gap at bottom right for the front door -->
+    <path class="wall" d="M 380 290 L 440 290 L 440 0 L 0 0 L 0 290 L 300 290"/>
+    <!-- inner walls -->
+    <path class="wall inner" d="M 260 0 L 260 120 M 260 160 L 260 290 M 0 170 L 120 170 M 160 170 L 440 170"/>
+    <!-- door swing -->
+    <path class="swing" d="M 300 290 L 300 210 A 80 80 0 0 1 380 290"/>
+    <text x="22" y="40" class="label">01 WORKSHOP</text>
+    <text x="282" y="40" class="label">02 DESK</text>
+    <text x="22" y="210" class="label">03 ABOUT</text>
+    <text x="318" y="320" class="label" text-anchor="middle">04 FRONT DOOR</text>
+  </g>
+</svg>
